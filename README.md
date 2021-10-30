@@ -8,3 +8,7 @@ node app.js add --title="x" --body="y"
 ## for remove note try
 >>
 node app.js remove --title="x"
+
+## for show notes title lists
+>>
+node app.js list
