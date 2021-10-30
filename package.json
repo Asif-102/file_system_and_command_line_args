@@ -5,12 +5,13 @@
   "main": "app.js",
   "dependencies": {
     "chalk": "^4.1.2",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "yargs": "^12.0.2"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "start-dev":"nodemon app.js",
+    "start-dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
