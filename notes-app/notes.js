@@ -36,6 +36,12 @@ const saveNotes = (notes) => {
     fs.writeFileSync('notes.json', JSON.stringify(notes));
 }
 
+const listNotes = ()=>{
+    const notes = loadNotes();
+    console.log(chalk.inverse('Your notes...'))
+    notes.forEach((note)=>console.log(chalk.bold(note.title)));
+}
+
 //common function
 const loadNotes = () => {
     try {
@@ -50,5 +56,6 @@ const loadNotes = () => {
 
 module.exports = {
     addNote,
-    removeNote
+    removeNote,
+    listNotes
 }
