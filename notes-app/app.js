@@ -56,5 +56,20 @@ yargs.command({
     }
 })
 
+yargs.command({
+    command:'read',
+    describe:'Read note body',
+    builder:{
+        title:{
+            describe:'Note title',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler(passingArgv){
+        notes.readNote(passingArgv.title);
+    }
+})
+
 // console.log(yargs.argv)
 yargs.parse();

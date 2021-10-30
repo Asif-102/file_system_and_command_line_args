@@ -19,7 +19,7 @@ const addNote = (title, body) => {
     }
 }
 
-const removeNote = (title, body) => {
+const removeNote = (title) => {
     const notes = loadNotes();
     const isExist = notes.filter((note) => note.title !== title);
     if (notes.length !== isExist.length) {
@@ -31,15 +31,25 @@ const removeNote = (title, body) => {
     }
 }
 
-//common function
-const saveNotes = (notes) => {
-    fs.writeFileSync('notes.json', JSON.stringify(notes));
-}
-
 const listNotes = ()=>{
     const notes = loadNotes();
     console.log(chalk.inverse('Your notes...'))
     notes.forEach((note)=>console.log(chalk.bold(note.title)));
+}
+
+const readNote = (title)=>{
+    const notes = loadNotes();
+    const matchNote = notes.find((note)=>note.title === title);
+    if(matchNote){
+        console.log(matchNote.body);
+    }else{
+        console.log(chalk.red.inverse('no note found'));
+    }
+}
+
+//common function
+const saveNotes = (notes) => {
+    fs.writeFileSync('notes.json', JSON.stringify(notes));
 }
 
 //common function
@@ -57,5 +67,6 @@ const loadNotes = () => {
 module.exports = {
     addNote,
     removeNote,
-    listNotes
+    listNotes,
+    readNote
 }
