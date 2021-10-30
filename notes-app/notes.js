@@ -4,9 +4,9 @@ const chalk = require('chalk');
 const addNote = (title, body) => {
     const notes = loadNotes();
 
-    const duplicateNotes = notes.filter((note) => note.title === title);
+    const duplicateNotes = notes.find((note) => note.title === title);
 
-    if (!duplicateNotes.length) {
+    if (!duplicateNotes) {
         notes.push({
             title,
             body
