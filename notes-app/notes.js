@@ -12,10 +12,10 @@ const addNote = (title, body) => {
             body
         })
         saveNotes(notes);
-        console.log(chalk.blue.bold('Note added successfully!!'));
+        console.log(chalk.blue.inverse.bold('Note added successfully!!'));
     }
     else {
-        console.log(chalk.yellow.bold('note already added!!'));
+        console.log(chalk.red.inverse.bold('note already added!!'));
     }
 }
 
