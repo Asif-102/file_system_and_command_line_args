@@ -27,7 +27,7 @@ const removeNote = (title, body) => {
         console.log(chalk.green.bold('Note removed successfully!!'));
     }
     else {
-        console.log(chalk.yellow.bold('This note does not exist'));
+        console.log(chalk.yellow.bold('No not found'));
     }
 }
 
