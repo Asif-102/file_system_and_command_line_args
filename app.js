@@ -26,9 +26,9 @@ yargs.command({
             type:'string'
         }
     },  
-    handler: (argv)=>{
-        console.log('Title: ', argv.title);
-        console.log('Body: ', argv.body);
+    handler: (passingArgv)=>{
+        console.log('Title: ', passingArgv.title);
+        console.log('Body: ', passingArgv.body);
     }
 })
 
