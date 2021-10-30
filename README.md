@@ -12,3 +12,7 @@ node app.js remove --title="x"
 ## for show notes title lists
 >>
 node app.js list
+
+## for read a note body
+>>
+node app.js read --title="x"
