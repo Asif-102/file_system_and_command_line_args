@@ -1,40 +1,32 @@
 const fs = require('fs');
 
-const getNotes = () => {
-    return 'Your notes...'
-}
-
 const addNote = (title, body) => {
     const notes = loadNotes();
 
-    const duplicateNotes = notes.filter(note => note.title === title);
+    const duplicateNotes = notes.filter(note=>note.title===title);
 
-    if (duplicateNotes.length === 0) {
-
+    if(!duplicateNotes.length){
         notes.push({
-            title: title,
-            body: body
-        })
-
+            title,
+            body
+        })   
         saveNotes(notes);
-        console.log('notes added successfully!!');
+        console.log('note added successfully!!');
     }
-    else {
-        console.log('notes already added');
+    else{
+        console.log('note already added!!');
     }
 }
 
-const saveNotes = (notes) => {
-    const dataJSON = JSON.stringify(notes);
-    fs.writeFileSync('notes.json', dataJSON);
+const saveNotes = (notes)=>{
+    fs.writeFileSync('notes.json', JSON.stringify(notes));
 }
 
 const loadNotes = () => {
     try {
 
-        const dataBuffer = fs.readFileSync('notes.json')
-        const dataJSON = dataBuffer.toString();
-        return JSON.parse(dataJSON);
+        const dataBuffer = fs.readFileSync('notes.json');
+        return JSON.parse(dataBuffer);
 
     } catch (error) {
         return []
@@ -42,6 +34,5 @@ const loadNotes = () => {
 }
 
 module.exports = {
-    getNotes,
     addNote
 }
