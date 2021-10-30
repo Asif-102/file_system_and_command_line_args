@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const addNote = (title, body) => {
     const notes = loadNotes();
 
-    const duplicateNotes = notes.filter(note => note.title === title);
+    const duplicateNotes = notes.filter((note) => note.title === title);
 
     if (!duplicateNotes.length) {
         notes.push({
@@ -21,7 +21,7 @@ const addNote = (title, body) => {
 
 const removeNote = (title, body) => {
     const notes = loadNotes();
-    const isExist = notes.filter(note => note.title !== title);
+    const isExist = notes.filter((note) => note.title !== title);
     if (notes.length !== isExist.length) {
         saveNotes(isExist)
         console.log(chalk.green.bold('Note removed successfully!!'));
