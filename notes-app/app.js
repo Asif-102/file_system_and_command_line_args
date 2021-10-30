@@ -9,7 +9,6 @@ yargs.version('1.1.0')
 
 // add, remove, read, list
 
-
 // Create add command
 
 yargs.command({
@@ -36,9 +35,16 @@ yargs.command({
 
 yargs.command({
     command: 'remove',
-    describe: 'Remove a note',
-    handler: () => {
-        console.log('Remove a note');
+    describe: 'Remove an existing note',
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (passingArgv) => {
+        notes.removeNote(passingArgv.title);
     }
 })
 
