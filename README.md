@@ -3,8 +3,8 @@
 
 ## for add note try
 >>
-node app.js --title="x" --body="y"
+node app.js add --title="x" --body="y"
 
 ## for remove note try
 >>
-node app.js --title="x"
+node app.js remove --title="x"
